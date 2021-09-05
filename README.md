@@ -2,8 +2,8 @@
 
 ## Description
 
--   Udacity and fwd Nanodegree Program
--   Front End Web Development Professional
+-   [Udacity](https://www.udacity.com/) and [Egypt FWD Intitive](https://www.egfwd.com) Nanodegree Program
+-   Front End Web Development Professional track
 
 -   ## Project Requirements
 
@@ -19,7 +19,7 @@
 
 ## About
 
--   This project is a part of a nanodegree provided by itida, fwd and udacity
+-   This project is a part of a nanodegree provided by Itida, [Udacity](https://www.udacity.com/), [Egypt FWD Intitive](https://www.egfwd.com)
 
 ### Technologies Used
 
