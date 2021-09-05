@@ -20,6 +20,7 @@
 ## About
 
 -   This project is a part of a nanodegree provided by Itida, [Udacity](https://www.udacity.com/), [Egypt FWD Intitive](https://www.egfwd.com)
+-   Project submission by: Yousef Osama
 
 ### Technologies Used
 
