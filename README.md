@@ -4,6 +4,7 @@
 
 -   [Udacity](https://www.udacity.com/) and [Egypt FWD Intitive](https://www.egfwd.com) Nanodegree Program
 -   Front End Web Development Professional track
+-   Javascript And The DOM Project
 
 -   ## Project Requirements
 
