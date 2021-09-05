@@ -33,6 +33,11 @@ h1 {
     }
 }
 
+@media only screen and (max-width: 425px){
+    body {
+        position: relative;
+    }
+}
 h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
@@ -72,6 +77,10 @@ section {
 
 .navbar__menu li {
     display: inline-block;
+}
+
+.activeNav {
+    color: #0ff !important;
 }
 
 .navbar__menu .menu__link {

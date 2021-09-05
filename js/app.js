@@ -2,19 +2,17 @@ window.onload = function () {
   const navUl = document.getElementById('navbar__list');
   const sections = document.querySelectorAll('section');
 
-  //performance: loops doesnt check sections length every iteration
-  const sectionsLength = sections.length;
-
   buildNav();
 
   function buildNav() {
     // a fragment to avoid repainting page for each nav
     const navFragment = document.createDocumentFragment();
     //for each section create a list containing an anchor
-    for (let index = 0; index < sectionsLength; index++) {
+    for (section of sections) {
       const navLi = document.createElement('li');
       navLi.classList.add('navbar__menu');
-      navLi.innerHTML = `<a href="#${sections[index].id}" class="menu__link">${sections[index].dataset.nav}</a>`;
+      // (data-section-id) is used for finding the section in smooth scroll (window.scrollTo)
+      navLi.innerHTML = `<a class="menu__link" data-section-id="#${section.id}">${section.dataset.nav}</a>`;
       navFragment.appendChild(navLi);
     }
     navUl.appendChild(navFragment);
@@ -23,11 +21,11 @@ window.onload = function () {
   // making scroll smooth
   navUl.addEventListener('click', (evt) => {
     evt.preventDefault();
-    //event deglation (peformance)
+    //event delegation (peformance: 1 event listener instead of 4)
     if (evt.target.nodeName === 'A') {
       //find the section of the anchor clicked
       const section = document.querySelector(
-        evt.target.getAttribute('href')
+        evt.target.dataset.sectionId
       );
       //smooth scroll
       window.scrollTo({
@@ -40,14 +38,20 @@ window.onload = function () {
   // Add class 'active' to section when near top of viewport
 
   document.addEventListener('scroll', () => {
-    for (let i = 0; i < sectionsLength; i++) {
-      const section = sections[i];
+    for (section of sections) {
       const pos = section.getBoundingClientRect();
+      const anchor = document.querySelector(`[data-section-id="#${section.id}"]`);
       //if half of the section is visble activate
-      pos.top < window.innerHeight / 2 &&
-            pos.bottom > window.innerHeight / 2
-        ? section.classList.add('active')
-        : section.classList.remove('active');
+      if (
+        pos.top < window.innerHeight / 2 &&
+                pos.bottom > window.innerHeight / 2
+      ) {
+        section.classList.add('active');
+        anchor.classList.add('activeNav');
+      } else {
+        section.classList.remove('active');
+        anchor.classList.remove('activeNav');
+      }
     }
   });
 };
