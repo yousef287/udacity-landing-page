@@ -5,7 +5,7 @@
 -   Udacity and fwd Nanodegree Program
 -   Front End Web Development Professional
 
--   ## The project asked to
+-   ## Project Requirements
 
 -   Build a navbar dynamically
 -   Add smooth scroll through javascript only
